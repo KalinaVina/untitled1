@@ -14,8 +14,8 @@ public class StartPage {
     private By buttonVhod = By.xpath("//*[@id='btnLogin']");
 
     public void auth(){
-        driver.findElement(inputEmail).sendKeys("kalvina_d_lkk@ews.ru");
-        driver.findElement(inputPass).sendKeys("Lkkcallj927");
+        driver.findElement(inputEmail).sendKeys("login");
+        driver.findElement(inputPass).sendKeys("pass");
         driver.findElement(buttonVhod).click();
     }
 
