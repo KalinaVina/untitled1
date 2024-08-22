@@ -1,8 +1,7 @@
 package PageObject;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
+
 
 public class FinancePage {
     private final WebDriver driver;
@@ -14,6 +13,7 @@ public class FinancePage {
     private By buttonVhod = By.xpath("//*[@id='btnLogin']"); //кнопка входа
     private By cookies = By.xpath("//*[@id='saveGotCookieWarning']"); //кнопка куков
     private By financePag = By.xpath("//a[@href='/Profile/Finance']"); // кнопка раздела финансы
+    //private  By
 
     public void finance(){
         driver.findElement(inputEmail).sendKeys("romanova_lv80@mail.ru"); //заполнение логина

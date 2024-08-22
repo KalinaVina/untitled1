@@ -27,14 +27,14 @@ public class AuthTest {
     // первый тест авторизует клиента/принимает куки/переход в мои заказы/проверка по основным фильтрам
     @Test
     public void firstTest() { //тест мои заказы
-        driver.get("https://lk.ews.ru/");
+        driver.get("https://lkk-pp.ews.ru/");
         OrderPage orderPage=new OrderPage(driver);
         orderPage.orders();
     }
     //второй тест авторизует клиента/принимает куки/переходит в раздел финансы/
     @Test
     public void secondTest(){ //тест финансы
-        driver.get("https://lk.ews.ru/");
+        driver.get("https://lkk-pp.ews.ru/");
         FinancePage financePage=new FinancePage(driver);
         financePage.finance();
     }

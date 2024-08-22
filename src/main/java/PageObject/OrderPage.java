@@ -2,9 +2,6 @@ package PageObject;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-import static org.openqa.selenium.Keys.ENTER;
-
-
 public class OrderPage {   //страница авторизации(Входа)
     private final WebDriver driver;
     public OrderPage(WebDriver driver) {
@@ -22,6 +19,10 @@ public class OrderPage {   //страница авторизации(Входа)
     private By statusList = By.xpath("//div[@class='nice-select']"); //выпадающий список - статусов доставки
     private By sozdan = By.xpath("//li[@data-value='1']"); //статус - создан
     private By luboi = By.xpath("//li[text()='Любой']"); // статус любой
+    private By vzakaz = By.xpath("//span[text()='В заказ']"); //перейти в заказа кнопка
+    private By numOrder = By.xpath("//a[@href='/Profile/Order/00006317-0000-0000-6481-2e0000000000']"); // перейти заказа через номер заказа
+    private By repeatOrder = By.xpath("//div[@class='repeat-order']"); //повторить заказа на странице заказа
+    private By addOrder = By.xpath("//a[@class='but_form btn btn-g']{2}");
 
 
 
@@ -34,13 +35,13 @@ public class OrderPage {   //страница авторизации(Входа)
         driver.findElement(myOrders).click(); //переход в раздел мои заказы
         driver.findElement(inputNumOrder).sendKeys("3104010504"); // заполнение поле поиска заказа(валид значение)
         driver.findElement(buttomSearch).click(); // кнопочка поиска(можно enter вставить)
+//        driver.findElement(numOrder).click(); //переход в сам заказа
+//        driver.findElement(repeatOrder).click();
+//        driver.findElement(addOrder).sendKeys(Keys.ENTER);
         driver.findElement(myOrders).click();  //переход обратно в мои заказа
-        driver.findElement(inputNumOrder).clear(); // очистить поле поиска
-        driver.findElement(buttomSearch).click(); // кнопка найти(или enter)
         driver.findElement(onlyCorrection).click(); //кликнуть чекбокс
-        driver.findElement(buttomSearch).click(); //кнопка найти
-        driver.findElement(onlyCorrection).click(); //очистить чекбокс
-        driver.findElement(buttomSearch).click();//кнопка найти
+        driver.findElement(inputNumOrder).sendKeys("3104070398"+"\n");
+        driver.findElement(myOrders).click(); //переход в раздел мои заказы
         driver.findElement(statusList).click(); //выпадающий список статуса заказа
         driver.findElement(sozdan).click(); //кликается по статусу -  создан
         driver.findElement(statusList).click(); // выпадающий список статуса заказа
